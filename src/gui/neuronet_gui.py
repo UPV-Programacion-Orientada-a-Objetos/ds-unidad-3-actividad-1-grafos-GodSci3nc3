@@ -45,7 +45,7 @@ class NeuroNetGUI:
         main_frame.columnconfigure(1, weight=1)
         
         # Sección 1: Carga de datos
-        datos_frame = ttk.LabelFrame(main_frame, text="📁 Carga de Datos", padding="5")
+        datos_frame = ttk.LabelFrame(main_frame, text="Carga de Datos", padding="5")
         datos_frame.grid(row=0, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(0, 10))
         
         self.btn_cargar = ttk.Button(datos_frame, text="Seleccionar Archivo Dataset", 
@@ -61,7 +61,7 @@ class NeuroNetGUI:
         self.lbl_archivo.grid(row=0, column=2, sticky=tk.W)
         
         # Sección 2: Información del grafo
-        info_frame = ttk.LabelFrame(main_frame, text="📊 Información del Grafo", padding="5")
+        info_frame = ttk.LabelFrame(main_frame, text="Información del Grafo", padding="5")
         info_frame.grid(row=1, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(0, 10))
         
         self.lbl_nodos = ttk.Label(info_frame, text="Nodos: -")
@@ -74,7 +74,7 @@ class NeuroNetGUI:
         self.lbl_mayor_grado.grid(row=1, column=0, columnspan=2, sticky=tk.W)
         
         # Sección 3: Algoritmos
-        algo_frame = ttk.LabelFrame(main_frame, text="🔍 Análisis Topológico", padding="5")
+        algo_frame = ttk.LabelFrame(main_frame, text="Análisis Topológico", padding="5")
         algo_frame.grid(row=2, column=0, columnspan=2, sticky=(tk.W, tk.E), pady=(0, 10))
         
         # BFS
@@ -101,7 +101,7 @@ class NeuroNetGUI:
         self.btn_visualizar.grid(row=0, column=6, padx=(10, 0))
         
         # Sección 4: Resultados
-        resultado_frame = ttk.LabelFrame(main_frame, text="📋 Resultados", padding="5")
+        resultado_frame = ttk.LabelFrame(main_frame, text="Resultados", padding="5")
         resultado_frame.grid(row=3, column=0, columnspan=2, sticky=(tk.W, tk.E, tk.N, tk.S), pady=(0, 10))
         main_frame.rowconfigure(3, weight=1)
         
@@ -143,7 +143,7 @@ class NeuroNetGUI:
                     # Verificar tamaño del archivo
                     tamano_mb = os.path.getsize(archivo) / (1024 * 1024)
                     if tamano_mb > 100:
-                        self.log(f"⚠️ Archivo grande detectado: {tamano_mb:.1f} MB")
+                        self.log(f"Archivo grande detectado: {tamano_mb:.1f} MB")
                         self.log("Esto puede tomar varios minutos...")
                     
                     inicio = time.time()

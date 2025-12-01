@@ -27,7 +27,7 @@ private:
 public:
     // Constructor
     GrafoDisperso() : numNodos(0), numAristas(0), usarCSR(true) {
-        std::cout << "[C++ Core] Inicializando GrafoDisperso con CSR..." << std::endl;
+        std::cout << "[C++ Core] Inicializando GrafoDisperso..." << std::endl;
     }
     
     // Destructor

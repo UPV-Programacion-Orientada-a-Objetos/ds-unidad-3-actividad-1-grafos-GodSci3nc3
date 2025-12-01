@@ -65,7 +65,7 @@ void GrafoDisperso::ajustarTamano(int maxNodo) {
 }
 
 void GrafoDisperso::construirCSR() {
-    std::cout << "[C++ Core] Construyendo representación CSR..." << std::endl;
+    std::cout << "[C++ Core] Construyendo CSR..." << std::endl;
     
     // Limpiar vectores CSR
     values.clear();
@@ -83,7 +83,7 @@ void GrafoDisperso::construirCSR() {
     }
     row_ptr[numNodos] = values.size();
     
-    std::cout << "[C++ Core] CSR construido. Memoria CSR: " << calcularMemoriaCSR() / (1024*1024) << " MB" << std::endl;
+    std::cout << "[C++ Core] CSR construido. Memoria: " << calcularMemoriaCSR() / (1024*1024) << " MB" << std::endl;
 }
 
 size_t GrafoDisperso::calcularMemoriaCSR() const {
@@ -245,7 +245,7 @@ void GrafoDisperso::imprimirInfo() {
     std::cout << "Nodos: " << numNodos << std::endl;
     std::cout << "Aristas: " << numAristas << std::endl;
     std::cout << "Densidad: " << std::fixed << std::setprecision(6) << densidad() << std::endl;
-    std::cout << "Diámetro aproximado: " << diametroAproximado() << std::endl;
+    std::cout << "Diametro aproximado: " << diametroAproximado() << std::endl;
     
     // Calcular memoria estimada
     size_t memoriaLista = 0;
@@ -254,11 +254,11 @@ void GrafoDisperso::imprimirInfo() {
     }
     memoriaLista += listaAdyacencia.size() * sizeof(std::vector<int>);
     
-    std::cout << "Memoria lista adyacencia: " << memoriaLista / (1024 * 1024) << " MB" << std::endl;
+    std::cout << "Memoria lista: " << memoriaLista / (1024 * 1024) << " MB" << std::endl;
     
     if (usarCSR && !values.empty()) {
         std::cout << "Memoria CSR: " << calcularMemoriaCSR() / (1024 * 1024) << " MB" << std::endl;
-        std::cout << "Ahorro memoria: " << (memoriaLista > calcularMemoriaCSR() ? "Sí" : "No") << std::endl;
+        std::cout << "Ahorro memoria: " << (memoriaLista > calcularMemoriaCSR() ? "Si" : "No") << std::endl;
     }
     
     int nodoMax = nodoMayorGrado();
