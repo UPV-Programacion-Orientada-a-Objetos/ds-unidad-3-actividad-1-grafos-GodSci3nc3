@@ -75,3 +75,22 @@ cdef class PyGrafoDisperso:
     def imprimir_info(self):
         """Imprime información del grafo"""
         self.grafo_cpp.imprimirInfo()
+    
+    def densidad(self):
+        """Obtiene la densidad del grafo"""
+        return self.grafo_cpp.densidad()
+    
+    def componente_conexo(self, int nodo):
+        """Obtiene el componente conexo de un nodo"""
+        cdef vector[int] componente_cpp = self.grafo_cpp.componenteConexo(nodo)
+        
+        cdef list componente_python = []
+        cdef int i
+        for i in range(componente_cpp.size()):
+            componente_python.append(componente_cpp[i])
+        
+        return componente_python
+    
+    def diametro_aproximado(self):
+        """Calcula el diámetro aproximado del grafo"""
+        return self.grafo_cpp.diametroAproximado()

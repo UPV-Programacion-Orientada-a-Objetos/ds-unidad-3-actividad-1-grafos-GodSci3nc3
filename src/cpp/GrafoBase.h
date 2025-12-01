@@ -22,6 +22,11 @@ public:
     // Método para encontrar el nodo con mayor grado
     virtual int nodoMayorGrado() = 0;
     
+    // Nuevas métricas
+    virtual double densidad() = 0;
+    virtual std::vector<int> componenteConexo(int nodo) = 0;
+    virtual int diametroAproximado() = 0;
+    
     // Método para obtener información del grafo
     virtual void imprimirInfo() = 0;
 };

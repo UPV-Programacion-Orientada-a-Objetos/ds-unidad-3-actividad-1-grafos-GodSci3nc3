@@ -12,6 +12,9 @@ cdef extern from "../cpp/GrafoBase.h":
         int getNumNodos()
         int getNumAristas()
         int nodoMayorGrado()
+        double densidad()
+        vector[int] componenteConexo(int nodo)
+        int diametroAproximado()
         void imprimirInfo()
 
 cdef extern from "../cpp/GrafoDisperso.h":
